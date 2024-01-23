@@ -18,4 +18,30 @@ class Shape {
     }
 }
 
-class Circle extends
+class Circle extends Shape {
+    constructor(shapeColor, text, textColor) {
+        super(shapeColor, text, textColor);
+    }
+}
+
+render() {
+    return `<svg version="1.1" width="300" height="200"xmins="http://www.w3.org/2000/svg"> <circle cx="150" cy="100" r="75" fill="${this.shapeColor}" /> <text x="150" y="125" font-size="60" text-anchor="middle" fill="${this.textColor}">$this.text</text></svg>`
+}
+
+class Square extends Shape {
+    constructor(shapeColor, text, textColor) {
+        super(shapeColor, text, textColor);
+    }
+}
+render() {
+return `<svg version="1.1" width="300" height="200"xmins="http://www.w3.org/2000/svg"> <square cx="150" cy="100" r="75" fill="${this.shapeColor}" /> <text x="150" y="125" font-size="60" text-anchor="middle" fill="${this.textColor}">$this.text</text></svg>`
+}
+
+class Triangle extends Shape {
+    constructor(shapeColor, text, textColor) {
+        super(shapeColor, text, textColor);
+    }
+}
+render() {
+    return `<svg version="1.1" width="300" height="200"xmins="http://www.w3.org/2000/svg"> <triangle cx="150" cy="100" r="75" fill="${this.shapeColor}" /> <text x="150" y="125" font-size="60" text-anchor="middle" fill="${this.textColor}">$this.text</text></svg>`
+}
