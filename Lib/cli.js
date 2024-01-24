@@ -5,7 +5,7 @@ const {Circle, Square, Triangle} = require('./shapes.js')
 
 class CLI{
 
-
+// questions for the to make the logo
     run() {
         return inquirer
         .prompt([ {
@@ -32,11 +32,10 @@ class CLI{
             name: 'texttobe',
             message: 'Type 3 letters any 3 letters?'
     }
-
+// to make the data show
         ])
         .then((data) => {
             let userShape = ""
-            console.log(data)
             if(data.shape == 'Circle'){
                 userShape = new Circle()
                 
@@ -50,10 +49,14 @@ class CLI{
             userShape.setColor(data.shapecolor)
             userShape.setText(data.texttobe)
             userShape.setTextColor(data.textcolor)
-            writeFile("./output/shape.svg",userShape.render(),(err) =>
-                err? new Error("Write file blew up"): console.log("shape chosen")
+            writeFile("./output/shape.svg",userShape.render(),err =>{
+                if (err) console.error(err)
                 
+            }
+
+                    
             )
+            console.log("Shape created")
         })
 
     }
