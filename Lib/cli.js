@@ -50,6 +50,10 @@ class CLI{
             userShape.setColor(data.shapecolor)
             userShape.setText(data.texttobe)
             userShape.setTextColor(data.textcolor)
+            writeFile("./output/shape.svg",userShape.render(),(err) =>
+                err? new Error("Write file blew up"): console.log("shape chosen")
+                
+            )
         })
 
     }
